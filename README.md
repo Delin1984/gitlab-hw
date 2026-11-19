@@ -33,7 +33,7 @@
  
 <img width="1287" height="807" alt="image" src="https://github.com/user-attachments/assets/30a9ef10-0871-47ac-acd9-88d379d0910c" />
 
-stages:
+'''stages:
   - check
   - validate
   - test
@@ -58,4 +58,4 @@ test-deploy:
   stage: test
   image: alpine:latest
   script:
-    - echo "Проверки прошли успешно!"
+    - echo "Проверки прошли успешно!"'''
