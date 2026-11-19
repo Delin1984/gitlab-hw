@@ -28,20 +28,34 @@
    
  * файл gitlab-ci.yml для своего проекта или вставьте код в соответствующее поле в шаблоне; 
  * скриншоты с успешно собранными сборками.
- 
- 
----
-## Дополнительные задания* (со звёздочкой)
-
-Их выполнение необязательное и не влияет на получение зачёта по домашнему заданию. Можете их решить, если хотите лучше разобраться в материале.
 
 ---
+ 
+<img width="1287" height="807" alt="image" src="https://github.com/user-attachments/assets/30a9ef10-0871-47ac-acd9-88d379d0910c" />
 
-### Задание 3*
+stages:
+  - check
+  - validate
+  - test
 
-Измените CI так, чтобы:
+check-files:
+  stage: check
+  image: alpine:latest
+  script:
+    - ls -la
+    - test -f Vagrantfile
+    - test -f docker-compose.yaml
+    - test -f GITLAB.md
 
- - этап сборки запускался сразу, не дожидаясь результатов тестов;
- - тесты запускались только при изменении файлов с расширением *.go.
+validate-compose:
+  stage: validate
+  image: docker:24-cli
+  script:
+    - docker compose -f docker-compose.yaml config -q
+    - echo "Docker Compose готов!"
 
-В качестве ответа добавьте в шаблон с решением файл gitlab-ci.yml своего проекта или вставьте код в соответсвующее поле в шаблоне.
+test-deploy:
+  stage: test
+  image: alpine:latest
+  script:
+    - echo "Проверки прошли успешно!"
