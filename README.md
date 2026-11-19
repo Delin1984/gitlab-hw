@@ -12,6 +12,11 @@
 
 ---
 
+<img width="1394" height="836" alt="image" src="https://github.com/user-attachments/assets/6b973818-de00-49f8-b07b-4a538032883d" />
+<img width="1674" height="1167" alt="image" src="https://github.com/user-attachments/assets/e28a15fa-a431-48a6-b4e6-787961af5135" />
+
+---
+
 ### Задание 2
 
 **Что нужно сделать:**
